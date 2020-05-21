@@ -14,7 +14,11 @@ workflows:
       - npm --version
       - node --version
       - npm install npm
-      - npm install npm
+      - brew install watchman
+      - brew install flow
+      - npm install –g react-native-cli
+      - react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
+
     artifacts:
       - build/**/outputs/**/*.apk
       - build/**/outputs/**/*.aab
